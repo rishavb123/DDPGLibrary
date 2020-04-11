@@ -8,9 +8,9 @@ class Actor:
         self.tau = tau
 
         inp = tf.keras.layers.Input(shape=(input_dims, ))
-        cur_layer = inp
-        for layer in orig_layers:
-            cur_layer = layer(cur_layer)
+        # cur_layer = inp
+        # for layer in orig_layers:
+        #     cur_layer = layer(cur_layer)
 
         first = len(orig_layers) == 0
 
@@ -53,7 +53,7 @@ class Actor:
     def get_model(self):
         return self.model
 
-    def get_target_mode(self):
+    def get_target_model(self):
         return self.target_model
 
     def load_model(self, model_file):
